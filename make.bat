@@ -1,0 +1,1 @@
+gcc -o a main.c net.c -lws2_32 
