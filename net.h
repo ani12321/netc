@@ -5,6 +5,7 @@
 #pragma comment(lib,"ws2_32.lib") //Winsock Library
 
 #define CHUNK 512
+#define MAX_REQ_SIZE 8192
 
 
 SOCKET net_init();
