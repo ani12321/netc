@@ -25,22 +25,26 @@ int main(int argc , char *argv[])
         "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n"
         "Accept-Encoding: gzip, deflate, sdch\r\n\r\n";
 
-    
     char *buffer;
-    buffer = net_send(s, message, buffer);
+    buffer = net_send(s, message, buffer); // response
     
+    //write response to file as raw
     FILE *file = fopen("response.txt", "w");
     fprintf(file, buffer);
     fclose(file);
      
-    
+    //parse response
     size_t parsed;
     struct http_parser parser;
-    http_parser_init(&parser, HTTP_REQUEST);
+    http_parser_init(&parser, HTTP_RESPONSE);
+    parsed = http_parser_execute(&parser, &settings, buffer, strlen(buffer));
     
-    parsed = http_parser_execute(&parser, &settings, message, strlen(message));
-    //printf("%d",parsed);
-    
+    //http global object
+    printf("%d\n",http.count);
+    printf("%s", http.status);
+    for(int i=0; i<http.count; i++){
+        printf("\n%s: %s", http.headers[i].key, http.headers[i].value);
+    }
  
     return 0;
 }
