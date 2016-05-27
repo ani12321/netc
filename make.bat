@@ -1,1 +1,1 @@
-gcc -o net main.c net.c rparse.c http-parser/http_parser.c -lws2_32 
+gcc -o net main.c net.c rparse.c netfile.c http-parser/http_parser.c -lws2_32 

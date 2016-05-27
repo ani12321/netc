@@ -23,11 +23,7 @@ int on_headers_complete(http_parser* p){
     return 0;
 }
 
-int on_complete(http_parser* p){
-    for(int i=0; i<http.count; i++){
-         printf("%s: %s\n", http.headers[i].key, http.headers[i].value);
-    }
-    
+int on_complete(http_parser* p){    
     return 0;
 }
 

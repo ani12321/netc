@@ -1,3 +1,5 @@
 *.exe
 response.txt
+response.net
+request.net
 .vscode/
