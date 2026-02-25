@@ -7,7 +7,7 @@ int netfile_write(char *data)
         return 0;
     }
     
-    fprintf(file, data);
+    fprintf(file, "%s", data);
     fclose(file);
     
     return 1;
