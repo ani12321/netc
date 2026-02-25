@@ -19,11 +19,9 @@ typedef struct messages_s{
 
 
 
-http_t http;
-prop_t _message;
-
-
-http_parser_settings settings;
+extern http_t http;
+extern prop_t _message;
+extern http_parser_settings settings;
 
 int on_headers_complete(http_parser* p);
 int on_begin(http_parser* p);

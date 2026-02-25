@@ -43,7 +43,7 @@ char *push_str(char *s, char *ch)
 
 int main(int argc , char *argv[])
 {
-    SOCKET s = net_init();
+    net_socket_t s = net_init();
     if(!s) return 1;
     int c = net_connect(s, "127.0.0.1", 80);
     if(c < 0) return 1;
