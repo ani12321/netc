@@ -7,7 +7,7 @@ int netfile_write(char *data)
         return 0;
     }
     
-    fprintf(file, data);
+    fprintf(file, "%s", data);
     fclose(file);
     
     return 1;
@@ -21,6 +21,7 @@ char *netfile_read()
     char *buffer;
 
     fp = fopen ( REQUEST_FILE , "rb" );
+    if(fp == NULL) return NULL;
 
     fseek( fp , 0L , SEEK_END);
     lSize = ftell( fp );
