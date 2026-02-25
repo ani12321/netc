@@ -21,6 +21,7 @@ char *netfile_read()
     char *buffer;
 
     fp = fopen ( REQUEST_FILE , "rb" );
+    if(fp == NULL) return NULL;
 
     fseek( fp , 0L , SEEK_END);
     lSize = ftell( fp );

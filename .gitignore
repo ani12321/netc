@@ -1,5 +1,9 @@
 *.exe
 net
+test/test_strutils
+test/test_netfile
+test/test_rparse
+test/test_net
 response.txt
 response.net
 request.net
