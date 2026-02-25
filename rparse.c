@@ -1,6 +1,7 @@
 #include "rparse.h"
 
-
+http_t http;
+prop_t _message;
 
 http_parser_settings settings = {
     .on_message_begin = on_begin,
